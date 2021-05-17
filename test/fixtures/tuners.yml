@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  brand: MyString
+  material: MyString
+  locking_mechanism: false
+  weight: 1.5
+  neck: one
+
+two:
+  name: MyString
+  brand: MyString
+  material: MyString
+  locking_mechanism: false
+  weight: 1.5
+  neck: two
