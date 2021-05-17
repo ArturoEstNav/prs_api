@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  toggle_type: MyString
+  electronic_list: MyString
+  capacitor_values: MyString
+  potentiometer_values: MyString
+  body: one
+
+two:
+  toggle_type: MyString
+  electronic_list: MyString
+  capacitor_values: MyString
+  potentiometer_values: MyString
+  body: two
