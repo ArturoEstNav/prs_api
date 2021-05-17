@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fretboard_wood: MyString
+  neck_wood: MyString
+  headstock_angle: 1
+  construction: MyString
+  inlay_style: MyString
+  side_inlay_style: MyString
+  guitar: one
+  fret_material: MyString
+  scale_length: 1.5
+  fretboard_radius: 1.5
+  fret_number: 1
+  width_first_fret: 1.5
+  width_twelfth_fret: 1.5
+  depth_first_fret: 1.5
+  depth_twelfth_fret: 1.5
+  neck_profile: MyString
+  truss_rod_type: MyString
+  finish_type: MyString
+  binding: MyString
+
+two:
+  fretboard_wood: MyString
+  neck_wood: MyString
+  headstock_angle: 1
+  construction: MyString
+  inlay_style: MyString
+  side_inlay_style: MyString
+  guitar: two
+  fret_material: MyString
+  scale_length: 1.5
+  fretboard_radius: 1.5
+  fret_number: 1
+  width_first_fret: 1.5
+  width_twelfth_fret: 1.5
+  depth_first_fret: 1.5
+  depth_twelfth_fret: 1.5
+  neck_profile: MyString
+  truss_rod_type: MyString
+  finish_type: MyString
+  binding: MyString
