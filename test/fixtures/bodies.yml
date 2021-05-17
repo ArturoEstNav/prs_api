@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  top_wood: MyString
+  back_wood: MyString
+  construction: MyString
+  weight_relief_type: MyString
+  binding: MyString
+  strap_button_type: MyString
+  finish_type: MyString
+  guitar: one
+
+two:
+  top_wood: MyString
+  back_wood: MyString
+  construction: MyString
+  weight_relief_type: MyString
+  binding: MyString
+  strap_button_type: MyString
+  finish_type: MyString
+  guitar: two

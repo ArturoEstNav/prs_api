@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_040247) do
+ActiveRecord::Schema.define(version: 2021_05_17_045707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bodies", force: :cascade do |t|
+    t.string "top_wood", default: "maple"
+    t.string "back_wood", default: "mahogany"
+    t.string "construction", default: "set neck"
+    t.string "weight_relief_type", default: "none"
+    t.string "binding", default: "faux"
+    t.string "strap_button_type", default: "standard"
+    t.string "finish_type", default: "gloss polyurethane"
+    t.bigint "guitar_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guitar_id"], name: "index_bodies_on_guitar_id"
+  end
 
   create_table "guitars", force: :cascade do |t|
     t.string "brand"
@@ -48,5 +62,6 @@ ActiveRecord::Schema.define(version: 2021_05_17_040247) do
     t.index ["guitar_id"], name: "index_necks_on_guitar_id"
   end
 
+  add_foreign_key "bodies", "guitars"
   add_foreign_key "necks", "guitars"
 end
