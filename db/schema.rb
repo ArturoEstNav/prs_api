@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
     t.string "weight_relief_type", default: "none"
     t.string "binding", default: "faux"
     t.string "strap_button_type", default: "standard"
-    t.string "finish_type", default: "gloss polyurethane"
+    t.string "finish_type", default: "gloss nitrocellulose"
     t.bigint "guitar_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
     t.string "name", default: "PRS Patented Tremolo, Gen III"
     t.string "brand", default: "paul reed smith"
     t.string "material", default: "steel and brass"
-    t.string "type", default: "tremolo"
+    t.string "bridge_type", default: "tremolo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
     t.index ["guitar_id"], name: "index_bridges_guitars_on_guitar_id"
   end
 
-  create_table "electronics_lists", force: :cascade do |t|
+  create_table "electronic_spec_lists", force: :cascade do |t|
     t.string "switch_type", default: "toggle"
     t.string "electronic_list", default: "1 volume 1 tone 1 selector switch"
     t.string "capacitor_values", default: "0.022µF"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
     t.bigint "guitar_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["guitar_id"], name: "index_electronics_lists_on_guitar_id"
+    t.index ["guitar_id"], name: "index_electronic_spec_lists_on_guitar_id"
   end
 
   create_table "guitars", force: :cascade do |t|
@@ -126,6 +126,6 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
   end
 
   add_foreign_key "bodies", "guitars"
-  add_foreign_key "electronics_lists", "guitars"
+  add_foreign_key "electronic_spec_lists", "guitars"
   add_foreign_key "necks", "guitars"
 end
