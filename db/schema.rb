@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
 
   create_table "guitars", force: :cascade do |t|
     t.string "brand", default: "paul reed smith"
-    t.string "model_name", default: "custom 24"
+    t.string "model", default: "custom 24"
     t.float "weight", default: 9.0
     t.integer "string_number", default: 6
     t.datetime "created_at", precision: 6, null: false

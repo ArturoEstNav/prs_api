@@ -1,90 +1,154 @@
-puts 'Clear database'
+# puts 'Clear database'
 
-Body.destroy_all
-Bridge.destroy_all
-ElectronicsList.destroy_all
-Guitar.destroy_all
-Neck.destroy_all
-Pickup.destroy_all
-Tuner.destroy_all
-
-puts 'Create guitar instances'
-Guitar.create(
-    model_name: 'DW CE 24 “FLOYD”'
-)
-
-Guitar.create(
-    model_name: 'MCCARTY 594 SINGLECUT'
-)
-
-Guitar.create(
-    model_name: 'CUSTOM 24 PIEZO'
-)
+# Body.destroy_all
+# Bridge.destroy_all
+# ElectronicsList.destroy_all
+# Guitar.destroy_all
+# Neck.destroy_all
+# Pickup.destroy_all
+# Tuner.destroy_all
 
 # puts 'Create guitar instances'
-# create_table "bodies", force: :cascade do |t|
-#     t.string "top_wood", default: "maple"
-#     t.string "back_wood", default: "mahogany"
-#     t.string "construction", default: "set neck"
-#     t.string "weight_relief_type", default: "none"
-#     t.string "binding", default: "faux"
-#     t.string "strap_button_type", default: "standard"
-#     t.string "finish_type", default: "gloss polyurethane"
-#     t.bigint "guitar_id", null: false
-#     t.datetime "created_at", precision: 6, null: false
-#     t.datetime "updated_at", precision: 6, null: false
-#     t.index ["guitar_id"], name: "index_bodies_on_guitar_id"
- 
+# Guitar.create(
+#     model: 'DW CE 24 “FLOYD”'
+# )
+# # Guitar id #1
+
+# Guitar.create(
+#     model: 'MCCARTY 594 SINGLECUT'
+# )
+# # Guitar id #2
+
+# Guitar.create(
+#     model: 'CUSTOM 24 PIEZO'
+# )
+# # Guitar id #3
+
+# puts 'Create body instances'
+
+# Body.create(
+#     guitar_id: 1, 
+#     top_wood: "flamed maple",
+#     construction: "bolt on",
+#     finish_type: "matte nitrocellulose"
+# )
+
+# Body.create(
+#     guitar_id: 2,
+#     top_wood: "flamed maple",
+#     back_wood: "mahogany",
+#     body_type: "single cut mccarthy",
+#     finish_type: "gloss nitrocellulose"
+# )
+
+# Body.create(
+#     guitar_id: 3,
+#     finish_type: "gloss nitrocellulose"
+# )
+
+# puts 'Create neck instances'
+
+# Neck.create(
+#     guitar_id: 1, 
+#     fretboard_wood: "maple",
+#     neck_wood: "maple",
+#     headstock_angle: 10,
+#     construction: "one piece",
+#     inlay_style: "black birds",
+#     side_inlay_style: "dots",
+#     fret_number: 24,
+#     neck_profile: "modified pattern thin",
+#     finish_type: "matte nitrocellulose"
+# )
+
+# Neck.create(
+#     guitar_id: 2,
+#     headstock_angle: 10,
+#     construction: "one piece",
+#     inlay_style: "old school birds",
+#     side_inlay_style: "dots",
+#     fret_material: "nickel",
+#     scale_length: 24.594,
+#     fret_number: 22,
+#     width_first_fret: 1.68,
+#     width_twelfth_fret: 0.0,
+#     depth_first_fret: 0.89,
+#     depth_twelfth_fret: 0.0,
+#     neck_profile: "pattern vintage",
+#     binding: "faux bone binding"
+# )
+
+# Neck.create(
+#     guitar_id: 3,
+#     fret_number: 24,
+#     neck_profile: "pattern thin",
+#     finish_type: "gloss nitrocellulose",
+#     binding: "none"
+# )
+
+# puts 'Create electronic_list instances'
+
+# ElectronicsList.create(
+#     guitar_id: 1,
+#     switch_type: "5 way blade",
+#     electronic_list: "Volume and Tone Control with 5-Way Blade Switch"
+# )
+
+# ElectronicsList.create(
+#     guitar_id: 2,
+#     switch_type: "3 way toggle",
+#     electronic_list: "Two Volume and Two Push/Pull Tone Controls with 3-Way Toggle Switch on Upper Bout"    
+# )
+
+# ElectronicsList.create(
+#     guitar_id: 3,
+#     switch_type: "5 way blade",
+#     electronic_list: "Volume and Tone Control with 5-Way Blade Switch and LR Baggs/PRS Piezo (3-way Selector and Blend Knob)",
+#     capacitor_values: "0.033µF"
+    
+# )
 
 #   create_table "bridges", force: :cascade do |t|
 #     t.string "name", default: "PRS Patented Tremolo, Gen III"
 #     t.string "brand", default: "paul reed smith"
 #     t.string "material", default: "steel and brass"
 #     t.string "type", default: "tremolo"
-#     t.bigint "body_id", null: false
 #     t.datetime "created_at", precision: 6, null: false
 #     t.datetime "updated_at", precision: 6, null: false
-#     t.index ["body_id"], name: "index_bridges_on_body_id"
- 
+#   end
 
-#   create_table "electronics_lists", force: :cascade do |t|
-#     t.string "switch_type", default: "toggle"
-#     t.string "electronic_list", default: "1 volume 1 tone 1 selector switch"
-#     t.string "capacitor_values", default: "0.022µF"
-#     t.string "potentiometer_values", default: "500k"
-#     t.bigint "body_id", null: false
-#     t.datetime "created_at", precision: 6, null: false
-#     t.datetime "updated_at", precision: 6, null: false
-#     t.index ["body_id"], name: "index_electronics_lists_on_body_id"
- 
-
-  
- 
-
-#   create_table "necks", force: :cascade do |t|
-#     t.string "fretboard_wood", default: "rosewood"
-#     t.string "neck_wood", default: "mahogany"
-#     t.integer "headstock_angle", default: 10
-#     t.string "construction", default: "one piece"
-#     t.string "inlay_style", default: "prs birds"
-#     t.string "side_inlay_style", default: "dots"
+#   create_table "bridges_guitars", id: false, force: :cascade do |t|
 #     t.bigint "guitar_id", null: false
-#     t.string "fret_material", default: "nickel"
-#     t.float "scale_length", default: 25.0
-#     t.float "fretboard_radius", default: 10.0
-#     t.integer "fret_number", default: 22
-#     t.float "width_first_fret", default: 1.65
-#     t.float "width_twelfth_fret", default: 2.06
-#     t.float "depth_first_fret", default: 0.87
-#     t.float "depth_twelfth_fret", default: 0.95
-#     t.string "neck_profile", default: "prs wide thin"
-#     t.string "truss_rod_type", default: "dual action"
-#     t.string "finish_type", default: "gloss polyurethane"
-#     t.string "binding", default: "none"
+#     t.bigint "bridge_id", null: false
+#     t.index ["bridge_id"], name: "index_bridges_guitars_on_bridge_id"
+#     t.index ["guitar_id"], name: "index_bridges_guitars_on_guitar_id"
+#   end
+
+
+#   create_table "guitars", force: :cascade do |t|
+#     t.string "brand", default: "paul reed smith"
+#     t.string "model_name", default: "custom 24"
+#     t.float "weight", default: 9.0
+#     t.integer "string_number", default: 6
 #     t.datetime "created_at", precision: 6, null: false
 #     t.datetime "updated_at", precision: 6, null: false
-#     t.index ["guitar_id"], name: "index_necks_on_guitar_id"
- 
+#   end
+
+#   create_table "guitars_pickups", id: false, force: :cascade do |t|
+#     t.bigint "guitar_id", null: false
+#     t.bigint "pickup_id", null: false
+#     t.index ["guitar_id"], name: "index_guitars_pickups_on_guitar_id"
+#     t.index ["pickup_id"], name: "index_guitars_pickups_on_pickup_id"
+#   end
+
+#   create_table "guitars_tuners", id: false, force: :cascade do |t|
+#     t.bigint "guitar_id", null: false
+#     t.bigint "tuner_id", null: false
+#     t.index ["guitar_id"], name: "index_guitars_tuners_on_guitar_id"
+#     t.index ["tuner_id"], name: "index_guitars_tuners_on_tuner_id"
+#   end
+
+
 
 #   create_table "pickups", force: :cascade do |t|
 #     t.string "name", default: "dragon ii"
@@ -92,11 +156,9 @@ Guitar.create(
 #     t.string "position", default: "bridge"
 #     t.string "dc_resistance", default: "12k"
 #     t.string "magnet_type", default: "alnico 4"
-#     t.bigint "electronics_list_id", null: false
 #     t.datetime "created_at", precision: 6, null: false
 #     t.datetime "updated_at", precision: 6, null: false
-#     t.index ["electronics_list_id"], name: "index_pickups_on_electronics_list_id"
- 
+#   end
 
 #   create_table "tuners", force: :cascade do |t|
 #     t.string "name", default: "classic closed guitar tuning machines"
@@ -104,8 +166,6 @@ Guitar.create(
 #     t.string "material", default: "unspecified"
 #     t.boolean "locking_mechanism", default: false
 #     t.float "weight", default: 0.0
-#     t.bigint "neck_id", null: false
 #     t.datetime "created_at", precision: 6, null: false
 #     t.datetime "updated_at", precision: 6, null: false
-#     t.index ["neck_id"], name: "index_tuners_on_neck_id"
- 
+#   end
