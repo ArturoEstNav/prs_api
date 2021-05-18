@@ -5,7 +5,7 @@ class CreateElectronicsLists < ActiveRecord::Migration[6.1]
       t.string :electronic_list, default: '1 volume 1 tone 1 selector switch'
       t.string :capacitor_values, default: '0.022µF'
       t.string :potentiometer_values, default: '500k'
-      t.references :body, null: false, foreign_key: true
+      t.references :guitar, null: false, foreign_key: true
 
       t.timestamps
     end

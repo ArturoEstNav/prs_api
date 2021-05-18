@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_045707) do
+ActiveRecord::Schema.define(version: 2021_05_17_191727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,28 @@ ActiveRecord::Schema.define(version: 2021_05_17_045707) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["guitar_id"], name: "index_bodies_on_guitar_id"
+  end
+
+  create_table "bridges", force: :cascade do |t|
+    t.string "name", default: "PRS Patented Tremolo, Gen III"
+    t.string "brand", default: "paul reed smith"
+    t.string "material", default: "steel and brass"
+    t.string "type", default: "tremolo"
+    t.bigint "body_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["body_id"], name: "index_bridges_on_body_id"
+  end
+
+  create_table "electronics_lists", force: :cascade do |t|
+    t.string "switch_type", default: "toggle"
+    t.string "electronic_list", default: "1 volume 1 tone 1 selector switch"
+    t.string "capacitor_values", default: "0.022µF"
+    t.string "potentiometer_values", default: "500k"
+    t.bigint "body_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["body_id"], name: "index_electronics_lists_on_body_id"
   end
 
   create_table "guitars", force: :cascade do |t|
@@ -63,6 +85,34 @@ ActiveRecord::Schema.define(version: 2021_05_17_045707) do
     t.index ["guitar_id"], name: "index_necks_on_guitar_id"
   end
 
+  create_table "pickups", force: :cascade do |t|
+    t.string "name", default: "dragon ii"
+    t.string "brand", default: "paul reed smith"
+    t.string "position", default: "bridge"
+    t.string "dc_resistance", default: "12k"
+    t.string "magnet_type", default: "alnico 4"
+    t.bigint "electronics_list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["electronics_list_id"], name: "index_pickups_on_electronics_list_id"
+  end
+
+  create_table "tuners", force: :cascade do |t|
+    t.string "name", default: "classic closed guitar tuning machines"
+    t.string "brand", default: "hipshot"
+    t.string "material", default: "unspecified"
+    t.boolean "locking_mechanism", default: false
+    t.float "weight", default: 0.0
+    t.bigint "neck_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["neck_id"], name: "index_tuners_on_neck_id"
+  end
+
   add_foreign_key "bodies", "guitars"
+  add_foreign_key "bridges", "bodies"
+  add_foreign_key "electronics_lists", "bodies"
   add_foreign_key "necks", "guitars"
+  add_foreign_key "pickups", "electronics_lists"
+  add_foreign_key "tuners", "necks"
 end

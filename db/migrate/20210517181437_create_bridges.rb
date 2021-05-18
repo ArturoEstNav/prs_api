@@ -5,7 +5,6 @@ class CreateBridges < ActiveRecord::Migration[6.1]
       t.string :brand, default: 'paul reed smith'
       t.string :material, default: 'steel and brass' 
       t.string :type, default: 'tremolo'
-      t.references :body, null: false, foreign_key: true
 
       t.timestamps
     end

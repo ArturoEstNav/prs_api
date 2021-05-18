@@ -6,7 +6,6 @@ class CreateTuners < ActiveRecord::Migration[6.1]
       t.string :material, default: 'unspecified'
       t.boolean :locking_mechanism, default: false
       t.float :weight, default: 0.0
-      t.references :neck, null: false, foreign_key: true
 
       t.timestamps
     end
