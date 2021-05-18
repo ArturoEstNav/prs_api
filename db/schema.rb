@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_013147) do
+ActiveRecord::Schema.define(version: 2021_05_18_230236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,13 +39,6 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "bridges_guitars", id: false, force: :cascade do |t|
-    t.bigint "guitar_id", null: false
-    t.bigint "bridge_id", null: false
-    t.index ["bridge_id"], name: "index_bridges_guitars_on_bridge_id"
-    t.index ["guitar_id"], name: "index_bridges_guitars_on_guitar_id"
-  end
-
   create_table "electronic_spec_lists", force: :cascade do |t|
     t.string "switch_type", default: "toggle"
     t.string "electronic_list", default: "1 volume 1 tone 1 selector switch"
@@ -57,6 +50,33 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
     t.index ["guitar_id"], name: "index_electronic_spec_lists_on_guitar_id"
   end
 
+  create_table "guitar_bridges", force: :cascade do |t|
+    t.bigint "guitar_id", null: false
+    t.bigint "bridge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bridge_id"], name: "index_guitar_bridges_on_bridge_id"
+    t.index ["guitar_id"], name: "index_guitar_bridges_on_guitar_id"
+  end
+
+  create_table "guitar_pickups", force: :cascade do |t|
+    t.bigint "guitar_id", null: false
+    t.bigint "pickup_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guitar_id"], name: "index_guitar_pickups_on_guitar_id"
+    t.index ["pickup_id"], name: "index_guitar_pickups_on_pickup_id"
+  end
+
+  create_table "guitar_tuners", force: :cascade do |t|
+    t.bigint "guitar_id", null: false
+    t.bigint "tuner_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guitar_id"], name: "index_guitar_tuners_on_guitar_id"
+    t.index ["tuner_id"], name: "index_guitar_tuners_on_tuner_id"
+  end
+
   create_table "guitars", force: :cascade do |t|
     t.string "brand", default: "paul reed smith"
     t.string "model", default: "custom 24"
@@ -64,20 +84,6 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
     t.integer "string_number", default: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "guitars_pickups", id: false, force: :cascade do |t|
-    t.bigint "guitar_id", null: false
-    t.bigint "pickup_id", null: false
-    t.index ["guitar_id"], name: "index_guitars_pickups_on_guitar_id"
-    t.index ["pickup_id"], name: "index_guitars_pickups_on_pickup_id"
-  end
-
-  create_table "guitars_tuners", id: false, force: :cascade do |t|
-    t.bigint "guitar_id", null: false
-    t.bigint "tuner_id", null: false
-    t.index ["guitar_id"], name: "index_guitars_tuners_on_guitar_id"
-    t.index ["tuner_id"], name: "index_guitars_tuners_on_tuner_id"
   end
 
   create_table "necks", force: :cascade do |t|
@@ -127,5 +133,11 @@ ActiveRecord::Schema.define(version: 2021_05_18_013147) do
 
   add_foreign_key "bodies", "guitars"
   add_foreign_key "electronic_spec_lists", "guitars"
+  add_foreign_key "guitar_bridges", "bridges"
+  add_foreign_key "guitar_bridges", "guitars"
+  add_foreign_key "guitar_pickups", "guitars"
+  add_foreign_key "guitar_pickups", "pickups"
+  add_foreign_key "guitar_tuners", "guitars"
+  add_foreign_key "guitar_tuners", "tuners"
   add_foreign_key "necks", "guitars"
 end
