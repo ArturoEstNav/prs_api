@@ -12,8 +12,9 @@
 }
 
 .navbar-custom .navbar-brand img {
-  height: 58px;
+  height: 55px;
   width: auto;
+  padding-bottom: 8px;
 }
 
 .navbar-link-list{
@@ -25,4 +26,8 @@
 .navbar-link{
   padding: 16px;
   text-transform: uppercase;
+  &:hover {
+    background-color: $background-blue;
+    cursor: pointer;
+  }
 }
