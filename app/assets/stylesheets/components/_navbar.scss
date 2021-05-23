@@ -22,12 +22,3 @@
   display: flex;
   align-items: center;
 }
-
-.navbar-link{
-  padding: 16px;
-  text-transform: uppercase;
-  &:hover {
-    background-color: $background-blue;
-    cursor: pointer;
-  }
-}

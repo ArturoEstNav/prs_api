@@ -4,17 +4,4 @@
 
 .container-form {
     margin-bottom: 36px;
-
-   .button-form {
-        background-color: $background-gray;
-        border: 1px solid $white;
-        padding: 12px;
-        text-transform: uppercase;
-
-        &:hover{
-            background-color: $accent-yellow;
-            color: $black;
-            cursor: pointer;
-        }
-    }
 }

@@ -1,0 +1,26 @@
+.button-navbar, .button-link{
+    padding: 16px;
+    text-transform: uppercase;
+    &:hover {
+      background-color: $background-blue;
+      cursor: pointer;
+    }
+}
+
+.button-link {
+    display: block;
+    text-align: center;
+}
+
+.button-custom {
+    background-color: $background-gray;
+    border: 1px solid $white;
+    padding: 12px;
+    text-transform: uppercase;
+
+    &:hover{
+        background-color: $accent-yellow;
+        color: $black;
+        cursor: pointer;
+    }
+}

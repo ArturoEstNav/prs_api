@@ -7,4 +7,9 @@ ul {
 }
 a, button {
     color: $white;
+
+    &:hover, &:active, &:visited{
+        color: inherit;
+        text-decoration: none;
+    }
 }
