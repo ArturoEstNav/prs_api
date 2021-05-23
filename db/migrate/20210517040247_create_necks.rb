@@ -20,6 +20,7 @@ class CreateNecks < ActiveRecord::Migration[6.1]
       t.string :truss_rod_type, default: 'dual action'
       t.string :finish_type, default: 'gloss polyurethane'
       t.string :binding, default: 'none'
+      t.string :nut_type, default: 'self-lubricating'
 
       t.timestamps
     end

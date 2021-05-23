@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_230236) do
     t.string "model", default: "custom 24"
     t.float "weight", default: 9.0
     t.integer "string_number", default: 6
+    t.text "unique_characteristics"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -106,6 +107,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_230236) do
     t.string "truss_rod_type", default: "dual action"
     t.string "finish_type", default: "gloss polyurethane"
     t.string "binding", default: "none"
+    t.string "nut_type", default: "self-lubricating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["guitar_id"], name: "index_necks_on_guitar_id"
