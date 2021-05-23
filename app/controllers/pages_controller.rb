@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def contributions
-    
+  end
+
+  def documentation
   end
 end
