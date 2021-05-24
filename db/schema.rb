@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_230236) do
+ActiveRecord::Schema.define(version: 2021_05_24_204248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 2021_05_18_230236) do
     t.index ["guitar_id"], name: "index_electronic_spec_lists_on_guitar_id"
   end
 
+  create_table "finishes", force: :cascade do |t|
+    t.string "back_color", default: "tobacco sunburst"
+    t.string "base_color", default: "brown"
+    t.string "binding", default: "faux"
+    t.string "finish_name", default: "tobacco sunburst"
+    t.string "clearcoat_type", default: "polyurethane gloss"
+    t.boolean "matching_heastock", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "guitar_bridges", force: :cascade do |t|
     t.bigint "guitar_id", null: false
     t.bigint "bridge_id", null: false
@@ -57,6 +68,15 @@ ActiveRecord::Schema.define(version: 2021_05_18_230236) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["bridge_id"], name: "index_guitar_bridges_on_bridge_id"
     t.index ["guitar_id"], name: "index_guitar_bridges_on_guitar_id"
+  end
+
+  create_table "guitar_finishes", force: :cascade do |t|
+    t.bigint "guitar_id", null: false
+    t.bigint "finish_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["finish_id"], name: "index_guitar_finishes_on_finish_id"
+    t.index ["guitar_id"], name: "index_guitar_finishes_on_guitar_id"
   end
 
   create_table "guitar_pickups", force: :cascade do |t|
@@ -119,6 +139,12 @@ ActiveRecord::Schema.define(version: 2021_05_18_230236) do
     t.string "position", default: "bridge"
     t.string "dc_resistance", default: "12k"
     t.string "magnet_type", default: "alnico 4"
+    t.string "lead_cable", default: "4 conductor"
+    t.string "output", default: "medium output"
+    t.integer "bass_eq", default: 0
+    t.integer "mids_eq", default: 0
+    t.integer "treble_eq", default: 0
+    t.boolean "wax_potted", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -137,6 +163,8 @@ ActiveRecord::Schema.define(version: 2021_05_18_230236) do
   add_foreign_key "electronic_spec_lists", "guitars"
   add_foreign_key "guitar_bridges", "bridges"
   add_foreign_key "guitar_bridges", "guitars"
+  add_foreign_key "guitar_finishes", "finishes"
+  add_foreign_key "guitar_finishes", "guitars"
   add_foreign_key "guitar_pickups", "guitars"
   add_foreign_key "guitar_pickups", "pickups"
   add_foreign_key "guitar_tuners", "guitars"

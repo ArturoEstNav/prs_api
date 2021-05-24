@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  back_color: MyString
+  base_color: MyString
+  finish_name: MyString
+  clearcoat_type: MyString
+  matching_heastock: false
+  guitar: one
+
+two:
+  back_color: MyString
+  base_color: MyString
+  finish_name: MyString
+  clearcoat_type: MyString
+  matching_heastock: false
+  guitar: two
