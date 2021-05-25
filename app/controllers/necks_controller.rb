@@ -6,9 +6,10 @@ class NecksController < ApplicationController
 
   def create
     @neck = Neck.new(neck_params)
-    @neck.guitar_id = params[:guitar_id]
+    @guitar = Guitar.find(params[:guitar_id])
+    @neck.guitar = @guitar
     if @neck.save
-      redirect_to root_path
+      redirect_to new_guitar_electronic_spec_list_path(@guitar, electronic_spec_list)
     else
       render :new
     end
