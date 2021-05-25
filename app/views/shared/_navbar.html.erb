@@ -5,11 +5,11 @@
 </div>
 <div>
     <ul>
-        <li class="button-navbar">
-        <%= link_to 'Documentation', pages_documentation_path %>
-        </li>
-        <li class="button-navbar">        
-          <%= link_to 'Contribute', pages_contributions_path %>
-        </li>
+        <%= link_to pages_documentation_path do %>
+            <li class="button-navbar">Documentation</li>
+        <% end %>            
+        <%= link_to pages_contributions_path do %>
+            <li class="button-navbar">Contribute</li>
+        <% end %>
     </ul>
 </div>

@@ -1,2 +1,13 @@
-<h1>Bodies#new</h1>
-<p>Find me in app/views/bodies/new.html.erb</p>
+<div class="container-form">
+    <h1>Add guitar body specifications</h1>
+    <%= simple_form_for [@guitar, @body] do |f| %>
+        <%= f.input :back_wood %>
+        <%= f.input :binding %>
+        <%= f.input :body_type %>
+        <%= f.input :construction %>
+        <%= f.input :finish_type %>
+        <%= f.input :strap_button_type %>
+        <%= f.input :weight_relief_type %>
+        <%= f.button :submit, 'Add neck details', class: 'button-custom' %>
+    <% end %>
+</div>
