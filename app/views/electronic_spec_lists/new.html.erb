@@ -1,2 +1,12 @@
-<h1>ElectronicSpecLists#new</h1>
-<p>Find me in app/views/electronic_spec_lists/new.html.erb</p>
+<div class="container-form">
+    <h1>Add electronics details</h1>
+    <%= simple_form_for [@guitar, @electronic_spec_list] do |f| %>
+        <%= f.input :capacitor_values %>
+        <%= f.input :electronic_list, hint: "List the guitar's electronics and special characteristics here." %>
+        <%= f.input :potentiometer_values %>
+        <%= f.input :switch_type %>
+        <%= f.button :submit, 'Add pickup details', class: 'button-custom' %>
+    <% end %>        
+</div>
+
+ 
