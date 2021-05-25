@@ -6,7 +6,8 @@ class BodiesController < ApplicationController
 
   def create
     @body = Body.new(body_params)
-    @body.guitar = params[:guitar_id]
+    @guitar = Guitar.find(params[:guitar_id])
+    @body.guitar = @guitar
     if @body.save
       redirect_to new_guitar_neck_path(@guitar, @neck)
     else
@@ -19,4 +20,20 @@ class BodiesController < ApplicationController
 
   def update
   end
+
+  private
+
+  def body_params
+    params.require(:body).permit(
+      :back_wood,
+      :binding,
+      :body_type,
+      :construction,
+      :finish_type,
+      :strap_button_type,
+      :top_wood,
+      :weight_relief_type
+    )
+  end
 end
+

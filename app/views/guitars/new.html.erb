@@ -3,9 +3,9 @@
     <%= simple_form_for @guitar do |f| %>
         <%= f.input :brand %>
         <%= f.input :model %>    
-        <%= f.input :weight %>
         <%= f.input :string_number %>
         <%= f.input :unique_characteristics %>
-        <%= f.button :submit, 'Add neck profile', class: 'button-custom' %> 
+        <%= f.input :weight %>
+        <%= f.button :submit, 'Add guitar body details', class: 'button-custom' %> 
     <% end %>
 </div>
