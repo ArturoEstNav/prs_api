@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :finishes, only: [:new, :create, :edit, :update]
   resources :pickups, only: [:new, :create, :edit, :update]
   resources :tuners, only: [:new, :create, :edit, :update]
-  resources :guitars, only: [:new, :create, :edit, :update] do
+  resources :guitars, only: [:new, :create, :edit, :update, :index, :show] do
     resources :necks, only: [:new, :create, :edit, :update]
     resources :bodies, only: [:new, :create, :edit, :update]
     resources :electronic_spec_lists, only: [:new, :create, :edit, :update]
