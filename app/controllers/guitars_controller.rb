@@ -12,7 +12,7 @@ class GuitarsController < ApplicationController
   def create
     @guitar = Guitar.new(guitars_params)
     if @guitar.save
-      new_guitar_neck_path(@guitar)
+      redirect_to new_guitar_neck_path(@guitar, @neck)
     else
       render :new
     end

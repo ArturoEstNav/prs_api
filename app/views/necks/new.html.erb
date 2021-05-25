@@ -1,2 +1,24 @@
-<h1>Necks#new</h1>
-<p>Find me in app/views/necks/new.html.erb</p>
+<h1>Add a new neck</h1>
+<%= simple_form_for [@guitar, @neck] do |f| %>
+    <%= f.input :binding %>
+    <%= f.input :construction %>
+    <%= f.input :depth_first_fret %>
+    <%= f.input :depth_twelfth_fret %>
+    <%= f.input :finish_type %> 
+    <%= f.input :fret_material %>
+    <%= f.input :fret_number %>
+    <%= f.input :fretboard_radius %>
+    <%= f.input :fretboard_wood %>
+    <%= f.input :guitar_id %> 
+    <%= f.input :headstock_angle %>
+    <%= f.input :inlay_style %>
+    <%= f.input :neck_profile %>
+    <%= f.input :neck_wood %>
+    <%= f.input :nut_type %> 
+    <%= f.input :side_inlay_style %>
+    <%= f.input :scale_length %>
+    <%= f.input :truss_rod_type %>
+    <%= f.input :width_first_fret %>
+    <%= f.input :width_twelfth_fret %>
+    <%= f.button :submit, 'Add a body profile', class: 'button-custom' %> 
+<% end %>
