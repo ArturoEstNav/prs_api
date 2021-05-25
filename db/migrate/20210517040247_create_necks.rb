@@ -18,7 +18,7 @@ class CreateNecks < ActiveRecord::Migration[6.1]
       t.float :depth_twelfth_fret, default: 0.95  
       t.string :neck_profile, default: 'prs wide thin'
       t.string :truss_rod_type, default: 'dual action'
-      t.string :finish_type, default: 'gloss polyurethane'
+      t.string :finish_type, default: 'polyurethane gloss'
       t.string :binding, default: 'none'
       t.string :nut_type, default: 'self-lubricating'
 

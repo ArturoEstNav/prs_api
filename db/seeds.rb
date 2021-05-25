@@ -166,6 +166,42 @@ Pickup.create(
     magnet_type: "alnico"
 )
 
+puts 'Create finish instances'
+Finish.create(
+    back_color: "black",
+    base_color: "red",
+    binding: "faux",
+    finish_name: "waring burst",
+    clearcoat_type: "nitrocellulose matte",
+    matching_heastock: false
+)
+
+Finish.create(
+    base_color: "orange",
+    binding: "faux",
+    finish_name: "mccarty sunburst",
+    clearcoat_type: "nitrocellulose gloss",
+    matching_heastock: false
+)
+
+Finish.create()
+
+puts 'Create guitar finish connection instances'
+GuitarFinish.create(
+    guitar_id: Guitar.first.id, 
+    finish_id: Finish.first.id
+)
+
+GuitarFinish.create(
+    guitar_id: (Guitar.first.id + 1), 
+    finish_id: (Finish.first.id + 1)
+)
+
+GuitarFinish.create(
+    guitar_id: (Guitar.first.id + 2), 
+    finish_id: (Finish.first.id + 2)
+)
+
 puts 'Create guitar bridge connection instances'
 GuitarBridge.create(
     guitar_id: Guitar.first.id, 

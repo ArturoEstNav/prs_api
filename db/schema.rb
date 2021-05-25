@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_204248) do
   end
 
   create_table "finishes", force: :cascade do |t|
-    t.string "back_color", default: "tobacco sunburst"
+    t.string "back_color", default: "cherry"
     t.string "base_color", default: "brown"
     t.string "binding", default: "faux"
     t.string "finish_name", default: "tobacco sunburst"
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_204248) do
     t.float "depth_twelfth_fret", default: 0.95
     t.string "neck_profile", default: "prs wide thin"
     t.string "truss_rod_type", default: "dual action"
-    t.string "finish_type", default: "gloss polyurethane"
+    t.string "finish_type", default: "polyurethane gloss"
     t.string "binding", default: "none"
     t.string "nut_type", default: "self-lubricating"
     t.datetime "created_at", precision: 6, null: false
