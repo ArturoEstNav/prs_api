@@ -3,6 +3,7 @@ class NecksController < ApplicationController
   end
 
   def create
+    @guitar = Guitar.find(params[:guitar_id])
   end
 
   def edit

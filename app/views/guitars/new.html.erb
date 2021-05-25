@@ -1,3 +1,11 @@
-<h1>Guitars#new</h1>
-<p>Find me in app/views/guitars/new.html.erb</p>
-<%= @quote %>
+<h1>Add a new guitar</h1>
+<%= simple_form_for @guitar do |f| %>
+    <%= f.input :brand %>
+    <%= f.input :model %>    
+    <%= f.input :weight %>
+    <%= f.input :string_number %>
+    <%= f.input :unique_characteristics %>
+    <%= f.button :submit, 'Add neck profile', class: 'button-custom' %> 
+<% end %>
+
+
