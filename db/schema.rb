@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2021_05_24_204248) do
   end
 
   create_table "electronic_spec_lists", force: :cascade do |t|
-    t.string "switch_type", default: "toggle"
-    t.string "electronic_list", default: "1 volume 1 tone 1 selector switch"
+    t.text "electronic_list", default: "1 volume 1 tone 1 selector switch"
     t.string "capacitor_values", default: "0.022µF"
     t.string "potentiometer_values", default: "500k"
+    t.string "switch_type", default: "toggle"
     t.bigint "guitar_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
