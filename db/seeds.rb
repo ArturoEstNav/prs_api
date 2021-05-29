@@ -103,17 +103,31 @@ Bridge.create(
 )
 
 Bridge.create(
-    name: "	prs two-piece",
-    brand: "paul reed smith",
-    material: "cast zinc, brass saddles and aluminum tailpiece",
-    bridge_type: "wraparound"
+    name: "original floyd rose tremolo",
+    brand: "floyd rose",
+    material: "hardenedsteel",
+    bridge_type: "floating tremolo"
 )
 
 Bridge.create(
-    name: "PRS Patented Tremolo, Gen III",
+    name: "prs two-piece",
+    brand: "paul reed smith",
+    material: "cast zinc, brass saddles and aluminum tailpiece",
+    bridge_type: "two piece stop tail"
+)
+
+Bridge.create(
+    name: "prs patented tremolo, gen iii",
     brand: "paul reed smith",
     material: "brass",
     bridge_type: "vintage tremolo"
+)
+
+Bridge.create(
+    name: "prs stoptail w/ brass inserts",
+    brand: "paul reed smith",
+    material: "aluminun and brass",
+    bridge_type: "wraparound"
 )
 
 puts 'Create tuner instances'
