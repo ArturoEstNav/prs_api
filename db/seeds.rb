@@ -165,6 +165,22 @@ Pickup.create(
 )
 
 Pickup.create(
+    name: "58/15",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 7.83k, bridge: 8.64k",
+    magnet_type: "alnico"
+)
+
+Pickup.create(
+    name: "58/15 lt",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 7.75k, bridge: 7.75k",
+    magnet_type: "alnico"
+)
+
+Pickup.create(
     name: "58/15 lt +",
     brand: "paul reed smith",
     position: "set",
@@ -178,6 +194,86 @@ Pickup.create(
     position: "set",
     dc_resistance: "neck: 8.15k, bridge: 9.03k",
     magnet_type: "alnico"
+)
+
+Pickup.create(
+    name: "53/10",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 8.42k, bridge: 8.98k",
+    magnet_type: "alnico"
+)
+
+Pickup.create(
+    name: "57/08",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 8.50K, bridge: 9.40k",
+    magnet_type: "alnico ii"
+)
+
+Pickup.create(
+    name: "57/08",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 8.50k, bridge: 9.40k",
+    magnet_type: "alnico ii"
+)
+
+Pickup.create(
+    name: "59/09",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 8.40k, bridge: 9.30k",
+    magnet_type: "alnico ii"
+)
+
+Pickup.create(
+    name: "408",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 9k, bridge: 9.70k",
+    magnet_type: "alnico"
+)
+
+Pickup.create(
+    name: "\ m / (metal)",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 8.5k, bridge: 15.7k",
+    magnet_type: "ceramic"
+)
+
+Pickup.create(
+    name: "DGT",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 7.30k, bridge: 9k",
+    magnet_type: "alnico"
+)
+
+Pickup.create(
+    name: "santana iii",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 7k, bridge: 10k",
+    magnet_type: "neck: alnico, bridge: ceramic"
+)
+
+Pickup.create(
+    name: "tremonti",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 7.36k, bridge: 15.42k",
+    magnet_type: "neck: alnico, bridge: ceramic"
+)
+
+Pickup.create(
+    name: "509",
+    brand: "paul reed smith",
+    position: "set",
+    dc_resistance: "neck: 8.20k, middle: 5.96k, bridge: 8.46k",
+    magnet_type: "unspecified"
 )
 
 puts 'Create finish instances'
